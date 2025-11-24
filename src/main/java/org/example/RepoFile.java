@@ -3,35 +3,35 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
-public class repo_file {
+public class RepoFile {
 
-    private List<cumple_agenda> Lista = new ArrayList<>();
+    private List<CumpleAgenda> Lista = new ArrayList<>();
 
-    public List<cumple_agenda> get_lista() {
+    public List<CumpleAgenda> get_lista() {
         return Lista;
     }
 
-    public void add_cumple(cumple_agenda c) {
+    public void add_cumple(CumpleAgenda c) {
         Lista.add(c);
     }
 
-    public cumple_agenda buscar_nombre(String nombre) {
-        for (cumple_agenda c : Lista) {
+    public CumpleAgenda buscar_nombre(String nombre) {
+        for (CumpleAgenda c : Lista) {
             if (c.get_nombre().equalsIgnoreCase(nombre)) return c;
         }
         return null;
     }
 
-    public List<cumple_agenda> buscar_dia(int dia) {
-        List<cumple_agenda> resultado = new ArrayList<>();
-        for (cumple_agenda c : Lista) {
+    public List<CumpleAgenda> buscar_dia(int dia) {
+        List<CumpleAgenda> resultado = new ArrayList<>();
+        for (CumpleAgenda c : Lista) {
             if (c.get_dia() == dia) resultado.add(c);
         }
         return resultado;
     }
 
     public boolean eliminar_nombre(String nombre) {
-        cumple_agenda encontrado = buscar_nombre(nombre);
+        CumpleAgenda encontrado = buscar_nombre(nombre);
         if (encontrado != null) {
             Lista.remove(encontrado);
             return true;

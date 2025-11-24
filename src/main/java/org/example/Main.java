@@ -2,62 +2,62 @@ package org.example;
 
 import java.util.Scanner;
 
-public class main {
+public class Main {
 
     public static void main(String[] args) {
 
-        repo_file Repo = new repo_file();
-        Scanner Sc = new Scanner(System.in);
-        boolean Salir = false;
+        RepoFile repo = new RepoFile();
+        Scanner sc = new Scanner(System.in);
+        boolean salir = false;
 
-        while (!Salir) {
+        while (!salir) {
             System.out.println("\n=== AGENDA ===");
             System.out.println("1. Listar");
             System.out.println("2. Buscar por día");
             System.out.println("3. Buscar por nombre");
             System.out.println("4. Añadir");
             System.out.println("5. Eliminar");
-            System.out.println("6. Salir");
+            System.out.println("6. salir");
 
-            String Opcion = Sc.nextLine();
+            String opcion = sc.nextLine();
 
-            switch (Opcion) {
+            switch (opcion) {
                 case "1":
-                    for (cumple_agenda c : Repo.get_lista()) {
+                    for (CumpleAgenda c : repo.get_lista()) {
                         System.out.println(c.get_nombre());
                     }
                     break;
 
                 case "2":
                     System.out.print("Día: ");
-                    for (cumple_agenda c : Repo.buscar_dia(Integer.parseInt(Sc.nextLine()))) {
+                    for (CumpleAgenda c : repo.buscar_dia(Integer.parseInt(sc.nextLine()))) {
                         System.out.println(c.get_nombre());
                     }
                     break;
 
                 case "3":
                     System.out.print("Nombre: ");
-                    cumple_agenda c = Repo.buscar_nombre(Sc.nextLine());
+                    CumpleAgenda c = repo.buscar_nombre(sc.nextLine());
                     if (c != null) System.out.println(c.get_nombre());
                     break;
 
                 case "4":
                     System.out.print("Nombre: ");
-                    String N = Sc.nextLine();
+                    String n = sc.nextLine();
                     System.out.print("Día: ");
-                    int D = Integer.parseInt(Sc.nextLine());
+                    int d = Integer.parseInt(sc.nextLine());
                     System.out.print("Mes: ");
-                    int M = Integer.parseInt(Sc.nextLine());
-                    Repo.add_cumple(new cumple_agenda(N, D, M));
+                    int m = Integer.parseInt(sc.nextLine());
+                    repo.add_cumple(new CumpleAgenda(n, d, m));
                     break;
 
                 case "5":
                     System.out.print("Eliminar nombre: ");
-                    Repo.eliminar_nombre(Sc.nextLine());
+                    repo.eliminar_nombre(sc.nextLine());
                     break;
 
                 case "6":
-                    Salir = true;
+                    salir = true;
                     break;
             }
         }
