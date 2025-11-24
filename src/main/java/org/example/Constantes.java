@@ -11,4 +11,5 @@ public class Constantes {
     public static final String DÍA = "Día: ";
     public static final String MES = "Mes: ";
     public static final String NOMBRE1 = "Eliminar nombre: ";
+    public static final String NOMBRE1 = "Nombre: ";
 }
