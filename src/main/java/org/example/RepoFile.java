@@ -5,35 +5,36 @@ import java.util.List;
 
 public class RepoFile {
 
-    private List<CumpleAgenda> Lista = new ArrayList<>();
+    private List<CumpleAgenda> lista = new ArrayList<>();
 
-    public List<CumpleAgenda> get_lista() {
-        return Lista;
+    public List<CumpleAgenda> getLista() {
+        return lista;
     }
 
-    public void add_cumple(CumpleAgenda c) {
-        Lista.add(c);
+
+    public void addCumple(CumpleAgenda c) {
+        lista.add(c);
     }
 
-    public CumpleAgenda buscar_nombre(String nombre) {
-        for (CumpleAgenda c : Lista) {
+    public CumpleAgenda buscarNombre(String nombre) {
+        for (CumpleAgenda c : lista) {
             if (c.get_nombre().equalsIgnoreCase(nombre)) return c;
         }
         return null;
     }
 
-    public List<CumpleAgenda> buscar_dia(int dia) {
+    public List<CumpleAgenda> buscarDia(int dia) {
         List<CumpleAgenda> resultado = new ArrayList<>();
-        for (CumpleAgenda c : Lista) {
+        for (CumpleAgenda c : lista) {
             if (c.get_dia() == dia) resultado.add(c);
         }
         return resultado;
     }
 
-    public boolean eliminar_nombre(String nombre) {
-        CumpleAgenda encontrado = buscar_nombre(nombre);
+    public boolean eliminarNombre(String nombre) {
+        CumpleAgenda encontrado = buscarNombre(nombre);
         if (encontrado != null) {
-            Lista.remove(encontrado);
+            lista.remove(encontrado);
             return true;
         }
         return false;

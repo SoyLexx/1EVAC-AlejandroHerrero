@@ -23,21 +23,21 @@ public class Main {
 
             switch (opcion) {
                 case "1":
-                    for (CumpleAgenda c : repo.get_lista()) {
+                    for (CumpleAgenda c : repo.getLista()) {
                         System.out.println(c.get_nombre());
                     }
                     break;
 
                 case "2":
                     System.out.print("Día: ");
-                    for (CumpleAgenda c : repo.buscar_dia(Integer.parseInt(sc.nextLine()))) {
+                    for (CumpleAgenda c : repo.buscarDia(Integer.parseInt(sc.nextLine()))) {
                         System.out.println(c.get_nombre());
                     }
                     break;
 
                 case "3":
                     System.out.print("Nombre: ");
-                    CumpleAgenda c = repo.buscar_nombre(sc.nextLine());
+                    CumpleAgenda c = repo.buscarNombre(sc.nextLine());
                     if (c != null) System.out.println(c.get_nombre());
                     break;
 
@@ -48,12 +48,12 @@ public class Main {
                     int d = Integer.parseInt(sc.nextLine());
                     System.out.print("Mes: ");
                     int m = Integer.parseInt(sc.nextLine());
-                    repo.add_cumple(new CumpleAgenda(n, d, m));
+                    repo.addCumple(new CumpleAgenda(n, d, m));
                     break;
 
                 case "5":
                     System.out.print("Eliminar nombre: ");
-                    repo.eliminar_nombre(sc.nextLine());
+                    repo.eliminarNombre(sc.nextLine());
                     break;
 
                 case "6":
