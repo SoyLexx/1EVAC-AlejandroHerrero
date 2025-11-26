@@ -1,12 +1,5 @@
 package org.example;
 
-/**
- * Esta clase contiene el código del menú de la agenda.
- *
- * @author Alejandro Herrero
- */
-
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
